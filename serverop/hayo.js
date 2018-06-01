@@ -1,46 +1,40 @@
 const Discord = require("discord.js");
 
-exports.run = async (auru, message, args) => {
-    let waaa = args[0].slice(0);
-    let target = args.slice(1);
-    let reason = args.slice(3).join(" ");
+exports.run = async (auru, message, args, prefixes) => {
+    let waaa = args[0];
+    let anon = args[1];
+    let target = message.mentions.members.first() || message.guild.members.get(args[2]);
+    let reason = args.splice(3, args.length - 3).join(" ");
+    let eooo = message.guild.channels.find("name", (anon));
 
-    let eooo = message.mentions.channels.first();
-    let wiii = message.mentions.members.first();
-
-    if(`${waaa}` === 'warn') {
+    if (!message.member.hasPermission("KICK_MEMBERS,", "BAN_MEMBERS"))
+    return;
+    if(args[0] === 'warn') {
             let warn = new Discord.RichEmbed()
             .setTitle("ECIEEEEEEEE")
-            .addField("Target: ", `${targetuser}`, true)
+            .addField("Target: ", `${target}`, true)
             .addField("warned by: ", `${message.author}`, true)
             .addField("REASON:", `${reason}`, false)
             .setColor("RANDOM")
             .setFooter("Sakura Project | sHiRoNEko")
-            .setThumbnail(`${u.avatarURL}`)
-            .setAuthor(`${u.username}`, "", `${u.avatarURL}`)
-
-        message.channels.get(eooo.id).send(warn)
+            .setThumbnail(`${auru.user.displayAvatarURL}`)
+            .setAuthor(`${auru.user.username}`, "", `${auru.user.displayAvatarURL}`)
+        eooo.send(warn)
+    }
+  
+  // NOR COMMANDOS
+  
+    if(args[0] === 'kick') {
+            let kick = new Discord.RichEmbed()
+            .setTitle("ECIEEEEEEEE")
+            .addField("Target: ", `${target}`, true)
+            .addField("warned by: ", `${message.author}`, true)
+            .addField("REASON:", `${reason}`, false)
+            .setColor("RANDOM")
+            .setFooter("Sakura Project | sHiRoNEko")
+            .setThumbnail(`${auru.user.displayAvatarURL}`)
+            .setAuthor(`${auru.user.username}`, "", `${auru.user.displayAvatarURL}`)
+        eooo.send(kick)
+        target.kick(reason)
     }
 }
-
-
-// NEW CODE [ PROBARLY NOT WORK ]
-/*
-let targetuser = message.mentions.members.first();
-let anonchannel = message.mentions.channel.first();
-let reason = // INI GIMANA ???
-
-if(`${waaa}` === 'warn') {
-    let warn = new Discord.RichEmbed()
-    .setTitle("ECIEEEEEEEE")
-    .addField("Target: ", `${targetuser}`, true)
-    .addField("warned by: ", `${message.author}`, true)
-    .addField("REASON:", `${reason}`, false)
-    .setColor("RANDOM")
-    .setFooter("Sakura Project | sHiRoNEko")
-    .setThumbnail(`${u.avatarURL}`)
-    .setAuthor(`${u.username}`, "", `${u.avatarURL}`)
-
-message.channels.get(anonchannel).send(warn)
-}
-*/

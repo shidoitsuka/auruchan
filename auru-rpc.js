@@ -1,5 +1,5 @@
 const DiscordRPC = require("discord-rpc");
-const auruVarG = require("./auru-global-var.js");
+// const auruVarG = require("./auru-global-var.js"); No longer be used again
 const ClientId = OWNER_ID;
 
 DiscordRPC.register(ClientId);

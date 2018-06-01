@@ -1,1 +1,1 @@
-const auruVarG = require("./auru-global-var.js");
+// const auruVarG = require("./auru-global-var.js"); useless files

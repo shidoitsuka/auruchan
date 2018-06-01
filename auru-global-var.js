@@ -1,4 +1,5 @@
-// low level configuration
+// low level configuration [ NO LONGER BE USED ]
+/*
 var app_id = process.env.APP_ID;
 var app_secret = process.env.APP_SECRET;
 var token_waaa = process.env.TOKEN_WAAA;
@@ -13,3 +14,4 @@ var syslog_wbid = process.env.SYL_WBID;
 var syslog_wbtken = process.env.SYL_WBTKEN;
 var men_hoid = process.env.MEN_HOID;
 var men_hoken = process.env.MEN_HOKEN;
+*/

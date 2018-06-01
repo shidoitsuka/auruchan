@@ -1,0 +1,28 @@
+{
+  "name": "auruchan",
+  "version": "1.0.0",
+  "description": "A girly bot with minimal feature",
+  "main": "node auru.js",
+  "scripts": {
+    "test": "Nothing to test",
+    "start": "node auru.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vzrenggamani/auruchan.git"
+  },
+  "author": "Kina F. Cahyani",
+  "license": "CC-BY-SA",
+  "bugs": {
+    "url": "https://github.com/vzrenggamani/auruchan/issues"
+  },
+  "homepage": "https://github.com/vzrenggamani/auruchan#readme",
+  "dependencies": {
+    "discord-rpc": "^3.0.0-beta.10",
+    "discord.js": "^11.3.2",
+    "fs": "0.0.1-security",
+    "pako": "^1.0.6",
+    "superagent": "^3.8.2",
+    "weather-js": "^2.0.0"
+  }
+}

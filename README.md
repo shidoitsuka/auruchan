@@ -1,6 +1,3 @@
-[![Discord](https://discordapp.com/api/guilds/427051022251458570/widget.png)](https://discord.gg/ysDdyg8)
-[![Documentation Status](https://readthedocs.org/projects/auruchan/badge/?version=latest)](http://auruchan.readthedocs.io/en/latest/?badge=latest)
-
-# Overview
+# auruchan [![Discord](https://discordapp.com/api/guilds/427051022251458570/widget.png)](https://discord.gg/ysDdyg8) [![Documentation Status](https://readthedocs.org/projects/auruchan/badge/?version=latest)](http://auruchan.readthedocs.io/en/latest/?badge=latest) [![CodeFactor](https://www.codefactor.io/repository/github/vzrenggamani/auruchan/badge)](https://www.codefactor.io/repository/github/vzrenggamani/auruchan) [![HitCount](http://hits.dwyl.io/vzrenggamani/auruchan.svg)](http://hits.dwyl.io/vzrenggamani/auruchan) [![NSP Status](https://nodesecurity.io/orgs/sakura-fukoka/projects/1837e9d7-96d6-4c2b-a343-14b7f4ff9d29/badge)](https://nodesecurity.io/orgs/sakura-fukoka/projects/1837e9d7-96d6-4c2b-a343-14b7f4ff9d29) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) [![Dependency Status](https://david-dm.org/vzrenggamani/auruchan.svg)](https://david-dm.org/vzrenggamani/auruchan)
 
 Auruchan is a bot used for moderating a single server. This bot not intended for public use, you must host AuruChan yourself to make it work fine because many of the commands are dadicated to server maintaining!

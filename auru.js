@@ -1,12 +1,13 @@
 // TOP LEVEL
 const Discord = require("discord.js");
-const superagent = require("superagent");
+// const superagent = require("superagent");
 const auru = new Discord.Client({ disableEveryone: true});
-const auruVarG = require("./auru-global-var.js");
-const DiscordRPC = require("discord-rpc");
+// const auruVarG = require("./auru-global-var.js");
+// const DiscordRPC = require("discord-rpc");
 const fs = require("fs")
 //const auruRPC = require("./auru-rpc.js"); // Test it LOL
 const auruAPI = require("./auru-api.js");
+const sql = require("sqlite");
 //const auruCONF = require("./auru-config.json");
 
                 // low level Variable
@@ -32,6 +33,7 @@ const auruAPI = require("./auru-api.js");
     //const mentionHook = new Discord.WebhookClient(process.env.MEN_HOID, process.env.MEN_HOKEN);
 
 // Variable Berjalan
+sql.open("./auru.sqlite");
 var prefix = 'dn..'; // Users  prefix
 var aprefix = 'da..'; // Operator Server Prefix
 var oprefix = 'do..'; // Owner Prefix
@@ -100,7 +102,7 @@ auru.on("message", async message => {
         // BEGIN OWNER COMMANDS
         try {
             let commandFile = require(`./owner/${cmd}.js`);
-            commandFile.run(bot, message, args, prefixes);
+            commandFile.run(auru, message, args, prefixes);
         } catch (e) {
             systemLog.send(e.message)
         } finally {
@@ -115,7 +117,7 @@ auru.on("message", async message => {
         // BEGIN SERVER OP COMMANDS
         try {
             let commandFile = require(`./serverop/${cmd}.js`);
-            commandFile.run(bot, message, args, prefixes);
+            commandFile.run(auru, message, args, prefixes);
             } catch (e) {
                 systemLog.send(e.message)
             } finally {
@@ -126,7 +128,7 @@ auru.on("message", async message => {
         // BEGIN NORM COMMANDS
         try {
             let commandFile = require(`./user/${cmd}.js`);
-            commandFile.run(bot, message, args, prefixes);
+            commandFile.run(auru, message, args, prefixes);
         } catch (e) {
             systemLog.send(e.message)
         } finally {

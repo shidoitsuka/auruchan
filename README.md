@@ -2,8 +2,8 @@
 [![About Me](/img/auru-about.png)](https://auru.vzrenggamani.tk)
 [![Invite Link](/img/_aurubanner-1.png)](INVITECODEHERE)
 [![Website Auru (Again)](/img/_aurubanner-2.png)](https://auru.vzrenggamani.tk)
-<a href="www.bla.com"> <img src="./img/_aurubanner-3.png" width="480" /></a>
-<a href="www.bla.com"> <img src="./img/_aurubanner-4.png" width="480" /></a>
+<a href="www.bla.com"> <img src="./img/_aurubanner-3.png" width="430" /></a>
+<a href="www.bla.com"> <img src="./img/_aurubanner-4.png" width="430" /></a>
 
 #
 [![PREFIXES](/img/auru-prefix.png)]()

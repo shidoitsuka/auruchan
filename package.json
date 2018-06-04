@@ -4,7 +4,7 @@
   "description": "A girly bot with minimal feature",
   "main": "node auru.js",
   "scripts": {
-    "test": "node auru.js",
+    "test": "node ./test/auru.js",
     "start": "node auru.js"
   },
   "repository": {

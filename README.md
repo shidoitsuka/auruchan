@@ -156,3 +156,4 @@ Hits | [![HitCount](http://hits.dwyl.io/vzrenggamani/auruchan.svg)](http://hits.
 Node Security | [![NSP Status](https://nodesecurity.io/orgs/sakura-fukoka/projects/1837e9d7-96d6-4c2b-a343-14b7f4ff9d29/badge)](https://nodesecurity.io/orgs/sakura-fukoka/projects/1837e9d7-96d6-4c2b-a343-14b7f4ff9d29)
 Contribution status | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) 
 Dependency Status |  [![Dependency Status](https://david-dm.org/vzrenggamani/auruchan.svg)](https://david-dm.org/vzrenggamani/auruchan)
+Travis CI | [![Build Status](https://travis-ci.org/vzrenggamani/auruchan.svg?branch=development)](https://travis-ci.org/vzrenggamani/auruchan)

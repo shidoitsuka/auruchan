@@ -6,7 +6,7 @@ const auru = new Discord.Client({ disableEveryone: true});
 // const DiscordRPC = require("discord-rpc");
 const fs = require("fs")
 //const auruRPC = require("./auru-rpc.js"); // Test it LOL
-const auruAPI = require("./auru-api.js");
+const auruAPI = require("../auru-api.js"); //LOOKTHISFIRST
 const sql = require("sqlite");
 //const auruCONF = require("./auru-config.json");
 
@@ -33,7 +33,7 @@ const sql = require("sqlite");
     //const mentionHook = new Discord.WebhookClient(process.env.MEN_HOID, process.env.MEN_HOKEN);
 
 // Variable Berjalan
-sql.open("./auru.sqlite");
+sql.open("../auru.sqlite");
 var prefix = 'dn..'; // Users  prefix
 var aprefix = 'da..'; // Operator Server Prefix
 var oprefix = 'do..'; // Owner Prefix
@@ -101,7 +101,7 @@ auru.on("message", async message => {
     } else if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392' ) {
         // BEGIN OWNER COMMANDS
         try {
-            let commandFile = require(`./commandos/owner/${cmd}.js`);
+            let commandFile = require(`../commandos/owner/${cmd}.js`);
             commandFile.run(auru, message, args, prefixes);
         } catch (e) {
             systemLog.send(e.message)
@@ -116,7 +116,7 @@ auru.on("message", async message => {
     } else if (message.content.startsWith(aprefix) && message.member.hasPermission("MANAGE_GUILD")) {
         // BEGIN SERVER OP COMMANDS
         try {
-            let commandFile = require(`./commandos/serverop/${cmd}.js`);
+            let commandFile = require(`../commandos/serverop/${cmd}.js`);
             commandFile.run(auru, message, args, prefixes);
             } catch (e) {
                 systemLog.send(e.message)
@@ -127,7 +127,7 @@ auru.on("message", async message => {
     } else if (message.content.startsWith(prefix)) {
         // BEGIN NORM COMMANDS
         try {
-            let commandFile = require(`./commandos/user/${cmd}.js`);
+            let commandFile = require(`../commandos/user/${cmd}.js`);
             commandFile.run(auru, message, args, prefixes);
         } catch (e) {
             systemLog.send(e.message)
@@ -154,4 +154,6 @@ auru.on("message", async autoresponder => {
 });
 
 // LOGIN STUFF
-auru.login(process.env.BOT_TOKEN)
+auru.login(process.env.BOT_TOKEN).then (
+    process.exit(0)
+)

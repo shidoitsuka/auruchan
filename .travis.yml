@@ -1,7 +1,6 @@
 language: node_js
 
 node_js:
- - "node"
  - "lts/*"
 
 before_install:
@@ -12,4 +11,4 @@ directories:
  - "node_modules"
 
 script:
-  - node test
+  - node auru.js

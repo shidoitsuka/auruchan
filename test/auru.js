@@ -154,6 +154,5 @@ auru.on("message", async autoresponder => {
 });
 
 // LOGIN STUFF
-auru.login(process.env.BOT_TOKEN).then (
-    process.exit(0)
-)
+auru.login(process.env.BOT_TOKEN)
+process.exit(0)

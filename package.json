@@ -4,7 +4,7 @@
   "description": "A girly bot with minimal feature",
   "main": "node auru.js",
   "scripts": {
-    "test": "Nothing to test",
+    "test": "node auru.js",
     "start": "node auru.js"
   },
   "repository": {
@@ -12,15 +12,17 @@
     "url": "git+https://github.com/vzrenggamani/auruchan.git"
   },
   "author": "Kina F. Cahyani",
-  "license": "CC-BY-SA",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vzrenggamani/auruchan/issues"
+    "url": "https://github.com/vzrenggamani/auruchan/issues",
+    "email": "sakura.fukoka@merahputih.id"
   },
   "homepage": "https://github.com/vzrenggamani/auruchan#readme",
   "dependencies": {
     "discord.js": "^11.3.2",
     "fs": "^0.0.2",
     "sqlite": "^2.9.2",
-    "superagent": "^3.8.2"
+    "superagent": "^3.8.2",
+    "gif-search": "^2.0.1"
   }
 }

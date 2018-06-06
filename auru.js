@@ -138,6 +138,9 @@ auru.on("message", async autoresponder => {
     if (autoresponder.content === `<@${auru.user.id}>`) {
         return autoresponder.channel.send("https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/jilat.gif")
     }
+    if (autoresponder.content === `<@!${auru.user.id}>`) {
+        return autoresponder.channel.send("https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/jilat.gif")
+    }
 
 });
 

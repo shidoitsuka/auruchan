@@ -1,10 +1,10 @@
 {
   "name": "auruchan",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A girly bot with minimal feature",
   "main": "node auru.js",
   "scripts": {
-    "test": "node ./test/auru.js",
+    "test": "eslint --ignore-path .gitignore .",
     "start": "node auru.js"
   },
   "repository": {
@@ -19,10 +19,18 @@
   },
   "homepage": "https://github.com/vzrenggamani/auruchan#readme",
   "dependencies": {
+    "canvas": "github:Automattic/node-canvas#92b192447e9b9ae98da0f801e4e34afdd1dc1ef8",
+    "canvas-constructor": "^1.0.1",
+    "chalk": "^2.4.1",
     "discord.js": "^11.3.2",
-    "fs": "^0.0.2",
+    "fs-nextra": "^0.3.5",
+    "gif-search": "^2.0.1",
+    "nekos.life": "^1.0.5",
     "sqlite": "^2.9.2",
-    "superagent": "^3.8.2",
-    "gif-search": "^2.0.1"
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0"
   }
 }

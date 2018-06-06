@@ -50,8 +50,7 @@ auru.on("message", async message => {
     // Konten Holder
     if (message.author.bot) return;
     if (message.channel.type === "dm") {
-        if (message.author.id !== '303011486916411392' && message.author.id !== '303011486916411392') return;
-    } // BLOCK COMMANDS VIA DM KECUALI OWNER
+        if (message.author.id !== '303011486916411392') return; }
 
     // Message Content
     let msg = message.content.toLowerCase();
@@ -61,17 +60,9 @@ auru.on("message", async message => {
 
     // Mention "myself" when someone mention me in a server
 	if (message.isMentioned("303011486916411392")) {
-        mentionHook.send(`${message.author.tag} MENTION KAMU TADI | AURU NOTIF for @Kina#9305  `)
-    }
-
-    //Cek apakah commands apa tidak
-    if (!message.content.startsWith(prefix)) {
-        if (!message.content.startsWith(aprefix)) {
-            if (!message.content.startsWith(oprefix)) {
-                return;
-            }
-        }
-    }
+        mentionHook.send(`${message.author.tag} MENTION KAMU TADI | AURU NOTIF for @Kina#9305  `) }
+     //Cek apakah commands apa tidak
+    if (!message.content.startsWith(prefixes)) { return; }
 
     // OTOMATISASI
     const permissions = [
@@ -82,48 +73,35 @@ auru.on("message", async message => {
         "MANAGE_NICKNAME",
         "MANAGE_ROLES"
       ];
-    if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392' ) {
 
-        return message.reply("OMAE WA MO SHINDEIRU!!!!");
-
-    } else if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392' ) {
-        // BEGIN OWNER COMMANDS
+      // OWNER COMMANDS
+      if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392') {
         try {
-            let commandFile = require(`./commandos/owner/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
+          let commandFile = require(`./commandos/owner/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-            systemLog.send(e.message)
-        } finally {
-            systemLog.send(`${message.author.tag} menggunakan perintah ${oprefix}${cmd} | DEDICATED ACCES`);
-        }
-        // END OWNER COMMANDS
-    } else if (message.content.startsWith(aprefix) && !message.member.hasPermission(permissions)) {
+          systemLog.send(e.message)
+        }}
+      
 
-        return message.reply("You're not Server Operator");
-
-    } else if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
-        // BEGIN SERVER OP COMMANDS
+      // START SERVER OP
+      if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
         try {
-            let commandFile = require(`./commandos/serverop/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
-            } catch (e) {
-                systemLog.send(e.message)
-            } finally {
-                systemLog.send(`${message.author.tag} menggunakan perintah ${aprefix}${cmd} | SERVER OPERATOR`);
-           }
-        // END SERVER OP COMMANDS
-    } else if (message.content.startsWith(prefix)) {
-        // BEGIN NORM COMMANDS
-        try {
-            let commandFile = require(`./commandos/user/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
+          let commandFile = require(`./commandos/serverop/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-            systemLog.send(e.message)
-        } finally {
-            systemLog.send(`${message.author.tag} menggunakan perintah ${prefix}${cmd}`);
+          systemLog.send(e.message)
+        }}
+      
+      // NORMAL AF
+      if (message.content.startsWith(prefix)) {
+        try {
+          let commandFile = require(`./commandos/user/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
+        } catch (e) {
+          systemLog.send(e.message)
         }
-        // END NORM COMMANDS
-    }
+      }
 });
 
 

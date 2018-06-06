@@ -11,12 +11,12 @@ exports.run = async (auru, message, args, prefixes) => {
     return;
     if(args[0] === 'warn') {
             let warn = new Discord.RichEmbed()
-            .setTitle("ECIEEEEEEEE")
+            .setTitle("AuruChan Moderation")
             .addField("Target: ", `${target}`, true)
             .addField("warned by: ", `${message.author}`, true)
             .addField("REASON:", `${reason}`, false)
             .setColor("RANDOM")
-            .setFooter("Sakura Project | sHiRoNEko")
+            .setFooter("Sakura Project | AuruChan Moderation Modules")
             .setThumbnail(`${auru.user.displayAvatarURL}`)
             .setAuthor(`${auru.user.username}`, "", `${auru.user.displayAvatarURL}`)
         eooo.send(warn)
@@ -26,12 +26,12 @@ exports.run = async (auru, message, args, prefixes) => {
   
     if(args[0] === 'kick') {
             let kick = new Discord.RichEmbed()
-            .setTitle("ECIEEEEEEEE")
+            .setTitle("AuruChan Moderation")
             .addField("Target: ", `${target}`, true)
-            .addField("warned by: ", `${message.author}`, true)
+            .addField("Kicked by: ", `${message.author}`, true)
             .addField("REASON:", `${reason}`, false)
             .setColor("RANDOM")
-            .setFooter("Sakura Project | sHiRoNEko")
+            .setFooter("Sakura Project | AuruChan Moderation Modules")
             .setThumbnail(`${auru.user.displayAvatarURL}`)
             .setAuthor(`${auru.user.username}`, "", `${auru.user.displayAvatarURL}`)
         eooo.send(kick)

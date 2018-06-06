@@ -4,8 +4,8 @@ exports.run = async (auru, message, args) => {
         return;
     const user = message.mentions.users.first();
     const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
-    if (!amount) return message.reply('Must specify an amount to delete!');
-    if (!amount && !user) return message.reply('Must specify a user and amount, or just an amount, of messages to purge!');
+    if (!amount) return message.reply('Haw Mach should is it ?');
+    if (!amount && !user) return message.reply('Haw Mach should is it ? and Who ?');
     message.channel.fetchMessages({
             limit: amount,
         }).then((messages) => {

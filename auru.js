@@ -1,15 +1,10 @@
 // TOP LEVEL CONFIGURATION
 const Discord = require("discord.js");
-// const superagent = require("superagent");
 const auru = new Discord.Client({ disableEveryone: true});
-// const auruVarG = require("./auru-global-var.js");
-// const DiscordRPC = require("discord-rpc");
-const fs = require("fs")
-//const auruRPC = require("./auru-rpc.js"); // Test it LOL
-//const auruAPI = require("./auru-api.js");
+const fsn = require("fs-nextra")
 const sql = require("sqlite");
+require("./modules/function.js")(auru);
 //const chalk = require('chalk');
-//const auruCONF = require("./auru-config.json");
 
     // webhook datas
     const mentionHook = new Discord.WebhookClient("449875362646589441", "6HB1TyJuJIYr6ZOGyQ_ezjlZJgdXVwoPlhUykKxhd-fPRL2wzj6_v-tg7Fva2SpPHZ4o"); // WB IMVALID
@@ -68,9 +63,6 @@ auru.on("message", async message => {
 	if (message.isMentioned("303011486916411392")) {
         mentionHook.send(`${message.author.tag} MENTION KAMU TADI | AURU NOTIF for @Kina#9305  `)
     }
-    if (message.isMentioned("444454206800396309")) {
-        mentionHook.send(`${message.author.tag} MENTION KAMU TADI | AURU NOTIF for @King Of Erangel✔🇲🇾🇮🇩#2769 `)
-    }
 
     //Cek apakah commands apa tidak
     if (!message.content.startsWith(prefix)) {
@@ -82,7 +74,15 @@ auru.on("message", async message => {
     }
 
     // OTOMATISASI
-    if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392' ) {
+    const permissions = [
+        "ADMINISTRATOR",
+        "MANAGE_CHANNELS",
+        "MANAGE_MESSAGES",
+        "MANAGE_WEBHOOKS",
+        "MANAGE_NICKNAME",
+        "MANAGE_ROLES"
+      ];
+      if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392' ) {
 
         return message.reply("OMAE WA MO SHINDEIRU!!!!");
 
@@ -97,11 +97,11 @@ auru.on("message", async message => {
             systemLog.send(`${message.author.tag} menggunakan perintah ${oprefix}${cmd} | DEDICATED ACCES`);
         }
         // END OWNER COMMANDS
-    } else if (message.content.startsWith(aprefix) && !message.member.hasPermission("MANAGE_GUILD")) {
+    } else if (message.content.startsWith(aprefix) && !message.member.hasPermission(permissions)) {
 
         return message.reply("Kamu Bukan Operator COK! :v");
 
-    } else if (message.content.startsWith(aprefix) && message.member.hasPermission("MANAGE_GUILD")) {
+    } else if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
         // BEGIN SERVER OP COMMANDS
         try {
             let commandFile = require(`./commandos/serverop/${cmd}.js`);

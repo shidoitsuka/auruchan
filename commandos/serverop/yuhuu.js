@@ -1,19 +1,19 @@
 const Discord = require("discord.js");
 exports.run = async (auru, message, args) => {
-    var yuhuu = args.slice(0).join(' ')
+    var yuhuu = args[0];
+    var prefixtarget = args[1]
     var peminta = message.author;
-    auru.fetchUser(yuhuu).then(u => {
+    auru.fetchUser(yuhuu).then(wah => {
             let botembed = new Discord.RichEmbed()
-            .setTitle(u.tag)
-            .setDescription("Wiuuu, Tunggu bentar yakkk. \n [_**BOT INVITES LINK**_](https://discordapp.com/oauth2/authorize?client_id=`${u.tag}`&scope=bot&permissions=0)")
-            .addField("Nama Bot: ", `${u.username}`, true)
-            .addField("Ini Prefixnya: ", "ISINYA-APA", true)
+            .setTitle(wah.tag)
+            .setDescription(`Wiuuu, Tunggu bentar yakkk. \n\n[**BOT INVITES LINK**](https://discordapp.com/oauth2/authorize?client_id=${yuhuu}&scope=bot&permissions=0)`)
+            .addField("Nama Bot: ", `${wah.username}`, true)
+            .addField("Ini Prefixnya: ", `${prefixtarget}`, true)
             .setColor("RANDOM")
             .setFooter("Sakura Project | sHiRoNEko")
-            .setThumbnail(`${u.avatarURL}`)
-            .setAuthor(`${u.username}`, "", `${u.avatarURL}`)
+            .setThumbnail(`${wah.avatarURL}`)
+            .setAuthor(`${wah.username}`, "", `${wah.avatarURL}`)
             
             message.channel.send(botembed);
-            auru.channels.get("430404430056259584").send(botembed)
             })
         }

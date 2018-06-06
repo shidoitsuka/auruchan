@@ -82,40 +82,50 @@ auru.on("message", async message => {
         "MANAGE_NICKNAME",
         "MANAGE_ROLES"
       ];
-      // START CHECK OWNER
-      if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392') return message.reply("OMAE WA MO SHINDEIRU!!!!");
-      if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392') {
+    if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392' ) {
+
+        return message.reply("OMAE WA MO SHINDEIRU!!!!");
+
+    } else if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392' ) {
+        // BEGIN OWNER COMMANDS
         try {
-          let commandFile = require(`./commandos/owner/${cmd}.js`);
-          commandFile.run(auru, message, args, prefixes);
+            let commandFile = require(`./commandos/owner/${cmd}.js`);
+            commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-          systemLog.send(e.message)
+            systemLog.send(e.message)
+        } finally {
+            systemLog.send(`${message.author.tag} menggunakan perintah ${oprefix}${cmd} | DEDICATED ACCES`);
         }
-      }
-      // END CHECK OWNER
-      
-      // START SERVER OP
-      if (message.content.startsWith(aprefix) && !message.member.hasPermission(permissions)) return message.reply("You're not Server Operator");
-      if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
+        // END OWNER COMMANDS
+    } else if (message.content.startsWith(aprefix) && !message.member.hasPermission(permissions)) {
+
+        return message.reply("You're not Server Operator");
+
+    } else if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
+        // BEGIN SERVER OP COMMANDS
         try {
-          let commandFile = require(`./commandos/serverop/${cmd}.js`);
-          commandFile.run(auru, message, args, prefixes);
-        } catch (e) {
-          systemLog.send(e.message)
-        }
-      }
-      // END SERVER OP
-      
-      // NORMAL AF
-      if (message.content.startsWith(prefix)) {
+            let commandFile = require(`./commandos/serverop/${cmd}.js`);
+            commandFile.run(auru, message, args, prefixes);
+            } catch (e) {
+                systemLog.send(e.message)
+            } finally {
+                systemLog.send(`${message.author.tag} menggunakan perintah ${aprefix}${cmd} | SERVER OPERATOR`);
+           }
+        // END SERVER OP COMMANDS
+    } else if (message.content.startsWith(prefix)) {
+        // BEGIN NORM COMMANDS
         try {
-          let commandFile = require(`./commandos/user/${cmd}.js`);
-          commandFile.run(auru, message, args, prefixes);
+            let commandFile = require(`./commandos/user/${cmd}.js`);
+            commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-          systemLog.send(e.message)
+            systemLog.send(e.message)
+        } finally {
+            systemLog.send(`${message.author.tag} menggunakan perintah ${prefix}${cmd}`);
         }
-      }
+        // END NORM COMMANDS
+    }
 });
+
 
 // Auto responder messages
 auru.on("message", async autoresponder => {

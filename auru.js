@@ -1,30 +1,10 @@
-// TOP LEVEL
+// TOP LEVEL CONFIGURATION
 const Discord = require("discord.js");
-// const superagent = require("superagent");
 const auru = new Discord.Client({ disableEveryone: true});
-// const auruVarG = require("./auru-global-var.js");
-// const DiscordRPC = require("discord-rpc");
-const fs = require("fs")
-//const auruRPC = require("./auru-rpc.js"); // Test it LOL
-const auruAPI = require("./auru-api.js");
+const fsn = require("fs-nextra")
 const sql = require("sqlite");
-//const auruCONF = require("./auru-config.json");
-
-                // low level Variable
-                var app_id = process.env.APP_ID;
-                var app_secret = process.env.APP_SECRET;
-                var token_waaa = process.env.TOKEN_WAAA;
-                var bot_token = process.env.BOT_TOKEN;
-                var reset_code = process.env.RESET_CODE;
-
-                var owner_id = process.env.OWNER_ID;
-                var playtesting_guild_id = process.env.PT_G_ID;
-                var owner_tag = process.env.KINA_DESU;
-
-                var syslog_wbid = process.env.SYL_WBID;
-                var syslog_wbtken = process.env.SYL_WBTKEN;
-                var men_hoid = process.env.MEN_HOID;
-                var men_hoken = process.env.MEN_HOKEN;
+require("./modules/function.js")(auru);
+//const chalk = require('chalk');
 
     // webhook datas
     const mentionHook = new Discord.WebhookClient("449875362646589441", "6HB1TyJuJIYr6ZOGyQ_ezjlZJgdXVwoPlhUykKxhd-fPRL2wzj6_v-tg7Fva2SpPHZ4o"); // WB IMVALID
@@ -33,7 +13,7 @@ const sql = require("sqlite");
     //const mentionHook = new Discord.WebhookClient(process.env.MEN_HOID, process.env.MEN_HOKEN);
 
 // Variable Berjalan
-sql.open("./auru.sqlite");
+sql.open("./auru.sqlite"); //AURUCHAN SQL Database
 var prefix = 'dn..'; // Users  prefix
 var aprefix = 'da..'; // Operator Server Prefix
 var oprefix = 'do..'; // Owner Prefix
@@ -70,8 +50,7 @@ auru.on("message", async message => {
     // Konten Holder
     if (message.author.bot) return;
     if (message.channel.type === "dm") {
-        if (message.author.id !== '303011486916411392' && message.author.id !== '303011486916411392') return;
-    } // BLOCK COMMANDS VIA DM KECUALI OWNER
+        if (message.author.id !== '303011486916411392') return; }
 
     // Message Content
     let msg = message.content.toLowerCase();
@@ -80,63 +59,51 @@ auru.on("message", async message => {
     let cmd = args.shift().toLowerCase();
 
     // Mention "myself" when someone mention me in a server
-	if (message.isMentioned("303011486916411392") || message.mentions.everyone || (message.guild && message.mentions.roles.filter(r => message.guild.member("303011486916411392").roles.has(r.id)).size > 0)) {
-        mentionHook.send(`${message.author.tag} MENTION KAMU TADI`)
-    }
-
-    //Cek apakah commands apa tidak
-    if (!message.content.startsWith(prefix)) {
-        if (!message.content.startsWith(aprefix)) {
-            if (!message.content.startsWith(oprefix)) {
-                return;
-            }
-        }
-    }
+	if (message.isMentioned("303011486916411392")) {
+        mentionHook.send(`${message.author.tag} MENTION KAMU TADI | AURU NOTIF for @Kina#9305  `) }
+     //Cek apakah commands apa tidak
+    if (!message.content.startsWith(prefixes)) { return; }
 
     // OTOMATISASI
-    if (message.content.startsWith(oprefix) && !message.author.id === '303011486916411392' ) {
+    const permissions = [
+        "ADMINISTRATOR",
+        "MANAGE_CHANNELS",
+        "MANAGE_MESSAGES",
+        "MANAGE_WEBHOOKS",
+        "MANAGE_NICKNAME",
+        "MANAGE_ROLES"
+      ];
 
-        return message.reply("OMAE WA MO SHINDEIRU!!!!");
-
-    } else if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392' ) {
-        // BEGIN OWNER COMMANDS
+      // OWNER COMMANDS
+      if (message.content.startsWith(oprefix) && message.author.id === '303011486916411392') {
         try {
-            let commandFile = require(`./owner/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
+          let commandFile = require(`./commandos/owner/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-            systemLog.send(e.message)
-        } finally {
-            systemLog.send(`${message.author.tag} menggunakan perintah ${oprefix}${cmd} | DEDICATED ACCES`);
-        }
-        // END OWNER COMMANDS
-    } else if (message.content.startsWith(aprefix) && !message.member.hasPermission("MANAGE_GUILD")) {
+          systemLog.send(e.message)
+        }}
+      
 
-        return message.reply("Kamu Bukan Operator COK! :v");
-
-    } else if (message.content.startsWith(aprefix) && message.member.hasPermission("MANAGE_GUILD")) {
-        // BEGIN SERVER OP COMMANDS
+      // START SERVER OP
+      if (message.content.startsWith(aprefix) && message.member.hasPermission(permissions)) {
         try {
-            let commandFile = require(`./serverop/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
-            } catch (e) {
-                systemLog.send(e.message)
-            } finally {
-                systemLog.send(`${message.author.tag} menggunakan perintah ${aprefix}${cmd} | SERVER OPERATOR`);
-           }
-        // END SERVER OP COMMANDS
-    } else if (message.content.startsWith(prefix)) {
-        // BEGIN NORM COMMANDS
-        try {
-            let commandFile = require(`./user/${cmd}.js`);
-            commandFile.run(auru, message, args, prefixes);
+          let commandFile = require(`./commandos/serverop/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
         } catch (e) {
-            systemLog.send(e.message)
-        } finally {
-            systemLog.send(`${message.author.tag} menggunakan perintah ${prefix}${cmd}`);
+          systemLog.send(e.message)
+        }}
+      
+      // NORMAL AF
+      if (message.content.startsWith(prefix)) {
+        try {
+          let commandFile = require(`./commandos/user/${cmd}.js`);
+          commandFile.run(auru, message, args, prefixes);
+        } catch (e) {
+          systemLog.send(e.message)
         }
-        // END NORM COMMANDS
-    }
+      }
 });
+
 
 // Auto responder messages
 auru.on("message", async autoresponder => {
@@ -150,8 +117,11 @@ auru.on("message", async autoresponder => {
     if (autoresponder.content === `<@${auru.user.id}>`) {
         return autoresponder.channel.send("https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/jilat.gif")
     }
+    if (autoresponder.content === `<@!${auru.user.id}>`) {
+        return autoresponder.channel.send("https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/jilat.gif")
+    }
 
 });
 
 // LOGIN STUFF
-auru.login(process.env.BOT_TOKEN);
+auru.login(process.env.BOT_TOKEN)

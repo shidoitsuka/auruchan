@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 exports.run = async (auru, message, args) => {
+    if (!message.member.hasPermission("MANAGE_WEBHOOKS,")) {
+        message.channel.send(`${message.author}, Kamu tidak memiliki akses "``MANAGE_WEBHOOKS``"`)
+    }
     const nameAvatar = args.join(" ");
     const linkCheck = /https?:\/\/.+\.(?:png|jpg|jpeg)/gi;
     if (!linkCheck.test(nameAvatar)) return message.reply("You must supply an image link.");

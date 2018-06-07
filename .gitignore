@@ -64,3 +64,4 @@ typings/
 config.json
 bin/Microsoft.NodejsTools.WebRole.dll
 .auru-secret/.wa
+.useless

@@ -1,0 +1,12 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 'lts/*'
+
+before_script:
+  - npm install
+
+
+install: npm i -g eslint eslint-config-amber eslint-plugin-json

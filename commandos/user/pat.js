@@ -33,7 +33,7 @@ exports.run = async (auru, message, args) => {
 
     // RESULTS
     const embed = new Discord.RichEmbed()
-        .setAuthor("AuruChan - Poke", "https://auruchan.pw/commands/user#pat", `${patimage.url}`)
+        .setAuthor("AuruChan - Pat", "https://auruchan.pw/commands/user#pat", `${patimage.url}`)
         .setDescription(description)
         .setImage(`${patimage.url}`)
         .setColor("#688fff")

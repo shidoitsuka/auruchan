@@ -110,7 +110,6 @@ auru.on("message", async message => {
       
 });
 
-
 // Auto responder messages
 auru.on("message", async autoresponder => {
     if (autoresponder.author.bot) return;

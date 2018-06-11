@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const nekoclient = require('nekos.life');
+const superagent = require("superagent")
 const neko = new nekoclient();
 
 /*
@@ -22,26 +23,21 @@ exports.run = async (auru, message, args) => {
     ]
 
     //VARIABLEJALAN
+    let {body} = await superagent.get("https://nekos.life/api/v2/img/poke")
     const wordAnswer = pokesamwan.random(),
-        pokeimage = await neko.getSFWPoke(),
         pokeselff = pokeself.random(),
         alonedesc = `**${message.author.username}** is lonely and poking themselves..\nHere some poke for ${message.author.tag}`;
-    let description, image, footer;
-
-    // PILIH MANA HAYOO
-    !args[0] ? (description = alonedesc, image = pokeimage.url, footer = pokeselff) : (description = wordAnswer, image = pokeimage.url, footer = `${message.author.tag} poked someone. CUTE!`);
+        let description, image, footer;
+        !args[0] ? (description = alonedesc, footer = pokeselff) : (description = wordAnswer, footer = `${message.author.tag} poking someone. CUTE!`);
 
     // RESULTS
     const embed = new Discord.RichEmbed()
-        .setAuthor("AuruChan - Poke", "https://auruchan.pw/commands/user#poke", `${pokeimage.url}`)
+        .setAuthor("AuruChan - Poke", "https://auruchan.pw/commands/user#poke", `${body.url}`)
         .setDescription(description)
-        .setImage(`${pokeimage.url}`)
+        .setImage(body.url)
         .setColor("#688fff")
         .setFooter(`${footer}`)
-    message.channel.send("*Chotto ne >>__<<")
-        .then(m => m.edit({
-            embed
-        }))
+        message.channel.send(embed)
 };
 
 

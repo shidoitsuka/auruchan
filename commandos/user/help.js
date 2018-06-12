@@ -13,5 +13,5 @@ module.exports.run = async (bot, message, args) => {
     .addField("members", "`hayo`")
     .addField("Lookup", "`yuhuu`")
     .addField("Misc", "`hook-create`")
-    message.channel.send(emded)
+    message.channel.send(embed)
 }

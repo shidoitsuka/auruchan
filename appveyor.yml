@@ -16,6 +16,7 @@ test_script:
   - npm --version
   # run tests
   - npm i -g eslint eslint-config-amber eslint-plugin-json
+  - node start test
 
 # Don't actually build.
 build: off

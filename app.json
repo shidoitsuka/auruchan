@@ -1,0 +1,27 @@
+{
+  "name": "auruchan",
+  "description": "Simplicity of Discord Server Moderation ",
+  "scripts": {
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

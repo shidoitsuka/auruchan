@@ -1,0 +1,36 @@
+{
+  "name": "auruchan",
+  "version": "0.1.0",
+  "description": "A girly bot with minimal feature",
+  "main": "node auru.js",
+  "scripts": {
+    "test": "eslint --ignore-path .gitignore .",
+    "startspm": "node -r spm-agent-nodejs auru.js",
+    "start": "node auru.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vzrenggamani/auruchan.git"
+  },
+  "author": "Kina F. Cahyani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vzrenggamani/auruchan/issues",
+    "email": "sakura.fukoka@merahputih.id"
+  },
+  "homepage": "https://github.com/vzrenggamani/auruchan#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "discord.js": "^11.3.2",
+    "fs-nextra": "^0.3.5",
+    "gif-search": "^2.0.1",
+    "nekos.life": "^1.0.5",
+    "spm-agent-nodejs": "^1.30.9",
+    "sqlite": "^2.9.2",
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0"
+  }
+}

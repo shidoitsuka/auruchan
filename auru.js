@@ -1,11 +1,12 @@
 // TOP LEVEL CONFIGURATION
+const spmAgent = require('spm-agent-nodejs')
 const Discord = require("discord.js");
 const auru = new Discord.Client({ disableEveryone: true});
 const fsn = require("fs-nextra")
 const sql = require("sqlite");
 require("./modules/function.js")(auru);
 const chalk = require('chalk');
-var spmAgent = require('spm-agent-nodejs')
+
 
 // Variable Berjalan
 const mentionHook = new Discord.WebhookClient("449875362646589441", "6HB1TyJuJIYr6ZOGyQ_ezjlZJgdXVwoPlhUykKxhd-fPRL2wzj6_v-tg7Fva2SpPHZ4o");

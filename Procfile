@@ -1,1 +1,1 @@
-auru: node auru-main.js
+auru: node auru.js

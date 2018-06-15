@@ -1,4 +1,4 @@
-[![CREDITS](/auruchan-assets\depan-techdoc.png)](https://github.com/auruchan-development/auruchan/tree/master)
+[![CREDITS](https://raw.githubusercontent.com/auruchan-development/auruchan-assets/master/depan-techdoc.png)](https://github.com/auruchan-development/auruchan/tree/master)
 
 ## AuruChan Repository Guidelines
 > Hey There, I wish you will fork me and send me some patches!!

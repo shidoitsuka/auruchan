@@ -7,7 +7,7 @@ exports.run = async (auru, message, args) => {
     let ummm = args.join(" ");
     let {body} = await superagent.get("https://nekos.life/api/v2/8ball")
     const embed = new Discord.RichEmbed()
-        .setAuthor("AuruChan - Umm", "https://auruchan.pw/commands/user#umm", "https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/737487-crop.png")
+        .setAuthor("AuruChan - Umm", "https://auruchan.pw/commands/user#umm")
         .addField("Question :", `${ummm}`)
         .setImage(body.url)
         .setColor("#688fff")

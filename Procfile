@@ -1,1 +1,1 @@
-worker: node auru.js
+auru: node auru.js

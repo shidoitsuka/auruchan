@@ -1,13 +1,13 @@
-[![CREDITS](/img/_aururepos.png)](https://github.com/vzrenggamani/auruchan/tree/master)
+[![CREDITS](/auruchan-assets\depan-techdoc.png)](https://github.com/auruchan-development/auruchan/tree/master)
 
 ## AuruChan Repository Guidelines
 > Hey There, I wish you will fork me and send me some patches!!
 
 Currently, my repository is managed by `kina#9305`. Every main commits, Pull Request review is handled by her, and nothing can't pass to edit my main code without her review.
 
-All code should be commited to [*development branch*](https://github.com/vzrenggamani/auruchan/tree/development) because of I don't wanna take buggy code to my ~~body~~ code. Every experimental code will be run in development bot app, she's my younger sister which handle buggy code itself, sadly right ? I'll explain her later :smile:
+All code should be commited to [*development branch*](https://github.com/auruchan-development/auruchan/tree/development) because of I don't wanna take buggy code to my ~~body~~ code. Every experimental code will be run in development bot app, she's my younger sister which handle buggy code itself, sadly right ? I'll explain her later :smile:
 
-Meanwhile I have dev branch for my sister, I have [***auruchan-release branch***](https://github.com/vzrenggamani/auruchan/tree/development) which is my code i run at everyday. The branch update is very rare, only **major** update or **security - bugfix** will be pushed to my branch!! So, all code in that branch is qualified and ready to use! [***Ehh, if you found bugs, please create some patches/issues***](https://github.com/vzrenggamani/auruchan/issues)
+Meanwhile I have dev branch for my sister, I have [***auruchan-release branch***](https://github.com/auruchan-development/auruchan/tree/development) which is my code i run at everyday. The branch update is very rare, only **major** update or **security - bugfix** will be pushed to my branch!! So, all code in that branch is qualified and ready to use! [***Ehh, if you found bugs, please create some patches/issues***](https://github.com/auruchan-development/auruchan/issues)
 
 
 And if you asking about `then, why master branch is exist if you have auruchan-release branch?` Here's the answer :
@@ -21,14 +21,14 @@ And if you asking about `then, why master branch is exist if you have auruchan-r
 
 #### Forking and Github Stuff
 
-Currently, my owner not trying add people to have write acces to my repository. All patches must go through via [`Pull Request`](https://github.com/vzrenggamani/auruchan/pull) instead of directly commiting to a branch to prevent malicious code inserted by the contributors. Maybe its annoying but it keeps github flow keeps run :smile:
+Currently, my owner not trying add people to have write acces to my repository. All patches must go through via [`Pull Request`](https://github.com/auruchan-development/auruchan/pull) instead of directly commiting to a branch to prevent malicious code inserted by the contributors. Maybe its annoying but it keeps github flow keeps run :smile:
 
 ##### Forking and Pull Request
 
 1. **Fork me first!**
-2. After you fork me, create your own branch based [`development branch`](https://github.com/vzrenggamani/auruchan/tree/development) to make sure you have the latest code changes and fixes.
+2. After you fork me, create your own branch based [`development branch`](https://github.com/auruchan-development/auruchan/tree/development) to make sure you have the latest code changes and fixes.
 3. Do you stuff at your own branch, fix anything you want!
-4. After you finish your `job`, create a PR with `base fork` pointed to [`development branch`](https://github.com/vzrenggamani/auruchan/tree/development)
+4. After you finish your `job`, create a PR with `base fork` pointed to [`development branch`](https://github.com/auruchan-development/auruchan/tree/development)
 5. Write the PR messages stuff, and create it
 6. Wait for reply on PR or try contact my owner at my Discord Server
 7. And your code will merged if its fits with my need

@@ -5,7 +5,6 @@ exports.run = async (auru, message, args, prefix) => {
     let embed = new RichEmbed()
         .setColor("#ff1d00")
         .setTitle("Bot is shutting down!")
-    message.channel.send(embed);
-
+    message.channel.send(embed)
     process.exit(0);
 }

@@ -7,7 +7,7 @@ exports.run = async (auru, message, args) => {
 
     let {body} = await superagent.get("https://nekos.life/api/v2/why")
     const embed = new Discord.RichEmbed()
-        .setAuthor("AuruChan - Gimme quest", "https://auruchan.pw/commands/user#umm", "https://raw.githubusercontent.com/vzrenggamani/vzrenggamani.github.io/master/src/737487-crop.png")
+        .setAuthor("AuruChan - Gimme quest", "https://auruchan.pw/commands/user#umm")
         .setDescription(body.why)
         .setColor("#688fff")
         .setFooter("Nekos.Life 4 layfe")

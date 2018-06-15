@@ -7,19 +7,20 @@
     "test": "eslint --ignore-path .gitignore .",
     "startspm": "node -r spm-agent-nodejs auru.js",
     "start": "node auru.js",
-    "newstart": "node auru-main.js"
+    "newstart": "node auru-main.js",
+    "newspmstart": "node -r spm-agent-nodejs auru-main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vzrenggamani/auruchan.git"
+    "url": "git+https://github.com/auruchan-development/auruchan.git"
   },
   "author": "Kina F. Cahyani",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vzrenggamani/auruchan/issues",
-    "email": "sakura.fukoka@merahputih.id"
+    "url": "https://github.com/auruchan-development/auruchan/issues",
+    "email": "auru@vzrenggamani.tk"
   },
-  "homepage": "https://github.com/vzrenggamani/auruchan#readme",
+  "homepage": "https://github.com/auruchan-development/auruchan#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "discord.js": "^11.3.2",

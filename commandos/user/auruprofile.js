@@ -11,7 +11,7 @@ exports.run = async (auru, message, args) => {
 		.addField("Version", "0.0.1-b120", true)
 		.addBlankField()
 		.addField("Developer Stuff", "[CLICK ME](https://auruchan-web.herokuapp.com/techdoc.html)")
-		.addField("Github Repository", "[CLICK ME]](https://github.com/auruchan-development/auruchan)", true)
+		.addField("Github Repository", "[CLICK ME]](https://github.com/auruchan-development)", true)
 		.addField("Uptime Status", "[CLICK ME](https://auruchan-web.herokuapp.com)", true)
 		.addField("Bug report", "[CLICK ME]](https://github.com/auruchan-development/auruchan/issues)", true)
 		.addField("Pull Request", "[CLICK ME]](https://github.com/auruchan-development/auruchan/pull)", true)

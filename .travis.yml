@@ -10,3 +10,6 @@ before_script:
 
 
 install: npm i -g eslint eslint-config-amber eslint-plugin-json
+
+script:
+  - npm test

@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const nekoclient = require('nekos.life');
-const superagent = require("superagent")
-const neko = new nekoclient();
 
 /*
 The code base is from :

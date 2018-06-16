@@ -6,8 +6,7 @@ const config = require('../config.json');
 module.exports = async function(message) {
 
     if (message.author.bot) return;
-    if (message.channel.type === "dm") {
-        if (message.author.id !== '303011486916411392') return; }
+    if (message.channel.type === "dm") return;
 
     let msg = message.content.toLowerCase();
     let args = message.content.slice(config.prefixes.length).trim().split(/ +/g);
@@ -24,16 +23,14 @@ module.exports = async function(message) {
       ];
 
     if (message.content.startsWith(`<@${config.botid}>`) || message.content.startsWith(`<@!${config.botid}>`)) {
-        message.channel.send(`Feel free to acces my [Homepage](http://auruchan-web.herokuapp.com)`)
+        message.channel.send("Feel free to acces my [Homepage](http://auruchan-web.herokuapp.com)")
     };
 
-    if (!message.content.startsWith(config.prefix)) {
-    if (!message.content.startsWith(config.aprefix)) {
-    if (!message.content.startsWith(config.oprefix)) {
-        return;
-    }}}
+    if (!message.content.startsWith(config.prefix || config.aprefix || config.oprefix)) return;
+    // if (!message.content.startsWith(config.aprefix)) return
+    // if (!message.content.startsWith(config.oprefix)) return
 
-
+    
     if (message.content.startsWith(config.prefix)) {
         try {
             let commandFile = require(`../commandos/user/${cmd}.js`);

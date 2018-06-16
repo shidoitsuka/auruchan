@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .addBlankField()
     .addField("`Server Operator` Prefix Commands", "", false)
     .addField("Message", "`cls`")
-    .addField("members", "`hayo`")
+    .addField("members", "`nyaa`")
     .addField("Lookup", "`yuhuu`")
     .addField("Misc", "`hook-create`")
     message.channel.send(embed)

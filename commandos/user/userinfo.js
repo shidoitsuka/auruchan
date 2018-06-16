@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Status", user.presence.status)
     .addField("Nickname", message.guild.member(user).nickname)
     .addField("Join at", message.guild.member(user).joinedAt)
-    .addField("Roles", member.roles.map(roles => `${roles.name}`).join(', '), true)
+    .addField("Roles", member.roles.map(roles => `${roles.name}`).join(', '))
     message.channel.send(embed)
 
 }

@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const superagent = require("superagent")
-const nekoclient = require('nekos.life');
-const neko = new nekoclient();
 
 exports.run = async (auru, message, args) => {
 

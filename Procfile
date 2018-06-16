@@ -1,1 +1,1 @@
-auru: node auru.js
+auru: npm newstart

@@ -7,6 +7,6 @@ exports.run = async (auru, message, args, oprefix) => {
         .setTitle("Jaa, Mata Nee")
     message.channel.send(embed)
 
-    .then(msg => auru.destroy())
+    .then(msg => auru.destroy(0))
     .then(() => auru.login(process.env.BOT_TOKEN))
 }

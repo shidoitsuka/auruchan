@@ -65,3 +65,4 @@ config.json
 bin/Microsoft.NodejsTools.WebRole.dll
 .auru-secret/.wa
 .useless
+.vs/auruchan/v15/.suo

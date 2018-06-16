@@ -1,3 +1,0 @@
-cls.
-
-node auru.js

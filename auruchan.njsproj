@@ -13,45 +13,76 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
-    <StartWebBrowser>True</StartWebBrowser>
+    <StartWebBrowser>False</StartWebBrowser>
+    <Environment>BOT_TOKEN=NDMzODk4NjI0NzkyMDAyNTYx.DfbYCQ._tkPYWRC62guhEvtxjP_GQ7pAl0</Environment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup Condition=" '$(Configuration)' == 'auruchan-sisters' ">
+    <OutputPath>bin\auruchan-sisters\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
+    <Content Include=".eslintrc.json" />
+    <Content Include=".travis.yml" />
+    <Content Include="app.json" />
+    <Content Include="appveyor.yml" />
+    <Content Include="auru.sqlite" />
+    <Content Include="commandos\serverop\_status.md" />
+    <Content Include="commandos\user\_status.md" />
+    <Content Include="CONTRIBUTING.md" />
+    <Content Include="img\auru-about.png" />
+    <Content Include="img\auru-banner.png" />
+    <Content Include="img\auru-credits.png" />
+    <Content Include="img\auru-help.png" />
+    <Content Include="img\auru-pfp.png" />
+    <Content Include="img\auru-prefix.png" />
+    <Content Include="img\auru-roles.png" />
+    <Content Include="img\_aurubanner-1.png" />
+    <Content Include="img\_aurubanner-2.png" />
+    <Content Include="img\_aurubanner-3.png" />
+    <Content Include="img\_aurubanner-4.png" />
+    <Content Include="img\_aurudesu.png" />
+    <Content Include="img\_auruproject.png" />
+    <Content Include="img\_aururepos.png" />
     <Content Include="LICENSE.txt" />
-    <Content Include="auru-config.json" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="STATUS.md" />
     <Content Include="watch.json" />
     <Content Include="README.md" />
-    <Content Include=".env" />
     <Content Include=".gitignore" />
-    <Compile Include="auru-api.js" />
-    <Compile Include="auru-global-var.js" />
-    <Compile Include="auru-rpc.js" />
     <Compile Include="auru.js" />
     <Content Include="auruchan.njsproj" />
     <Content Include="Procfile" />
     <Content Include="wa.bat" />
-    <Compile Include="owner\ehh.js" />
-    <Compile Include="owner\nanidefuk.js" />
-    <Compile Include="serverop\cls.js" />
-    <Compile Include="serverop\hayo.js" />
-    <Compile Include="serverop\hey.js" />
-    <Compile Include="serverop\hook-create.js" />
-    <Compile Include="serverop\say.js" />
-    <Compile Include="serverop\yuhuu.js" />
-    <Compile Include="user\botinfo.js" />
-    <Compile Include="user\creator.js" />
-    <Compile Include="user\neko.js" />
-    <Compile Include="user\ping.js" />
+    <Compile Include="commandos\owner\co.js" />
+    <Compile Include="commandos\owner\ehh.js" />
+    <Compile Include="commandos\owner\hey.js" />
+    <Compile Include="commandos\owner\nanidefuk.js" />
+    <Compile Include="commandos\owner\shinde.js" />
+    <Compile Include="commandos\serverop\BUG_severustatu.js" />
+    <Compile Include="commandos\serverop\cls.js" />
+    <Compile Include="commandos\serverop\hayo.js" />
+    <Compile Include="commandos\serverop\hook-create.js" />
+    <Compile Include="commandos\serverop\yuhuu.js" />
+    <Compile Include="commandos\user\avatar.js" />
+    <Compile Include="commandos\user\botinfo.js" />
+    <Compile Include="commandos\user\creator.js" />
+    <Compile Include="commandos\user\hug.js" />
+    <Compile Include="commandos\user\kiss.js" />
+    <Compile Include="commandos\user\neko.js" />
+    <Compile Include="commandos\user\pat.js" />
+    <Compile Include="commandos\user\ping.js" />
+    <Compile Include="commandos\user\poke.js" />
+    <Compile Include="modules\function.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="auruchan" />
-    <Folder Include="auruchan\auruchan" />
-    <Folder Include="owner" />
-    <Folder Include="serverop" />
-    <Folder Include="user" />
+    <Folder Include="commandos\" />
+    <Folder Include="commandos\owner\" />
+    <Folder Include="commandos\serverop\" />
+    <Folder Include="commandos\user\" />
+    <Folder Include="img\" />
+    <Folder Include="modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->

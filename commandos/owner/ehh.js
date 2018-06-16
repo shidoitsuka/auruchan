@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (auru, message, args, prefix) => {
+exports.run = async (auru, message, args) => {
     if (message.author.id !== '303011486916411392' && message.author.id !== '303011486916411392') return;
     try {
         let codein = args.join(" ");

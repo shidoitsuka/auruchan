@@ -6,8 +6,7 @@
   "scripts": {
     "test": "eslint --ignore-path .gitignore .",
     "startspm": "node -r spm-agent-nodejs auru.js",
-    "start": "node auru.js",
-    "newstart": "node auru-main.js"
+    "start": "node auru-main.js"
   },
   "repository": {
     "type": "git",

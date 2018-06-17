@@ -8,10 +8,11 @@ module.exports = async function(message) {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
 
-    let msg = message.content.toLowerCase();
-    let args = message.content.slice(config.prefixes.length).trim().split(/ +/g);
-    let cmd = args.shift().toLowerCase();
-    let auru = message.client;
+    const msg = message.content.toLowerCase();
+    const args = message.content.slice(config.prefixes.length).trim().split(/ +/g);
+    const cmd = args.shift().toLowerCase();
+    const auru = message.client;
+    let commandFile;
 
     const permissions = [
         "ADMINISTRATOR",
@@ -35,7 +36,7 @@ module.exports = async function(message) {
     
     if (message.content.startsWith(config.prefix)) {
         try {
-            let commandFile = require(`../commandos/user/${cmd}.js`);
+            commandFile = require(`../commandos/user/${cmd}.js`);
             commandFile.run(auru, message, args);
         } catch (e) {
             console.log(e.message)
@@ -44,7 +45,7 @@ module.exports = async function(message) {
 
     if (message.content.startsWith(config.aprefix) && message.member.hasPermission(permissions)) {
         try {
-            let commandFile = require(`../commandos/serverop/${cmd}.js`);
+            commandFile = require(`../commandos/serverop/${cmd}.js`);
             commandFile.run(auru, message, args);
         } catch (e) {
             console.log(e.message)
@@ -53,7 +54,7 @@ module.exports = async function(message) {
 
     if (message.content.startsWith(config.oprefix) && message.author.id === '303011486916411392') {
         try {
-            let commandFile = require(`../commandos/owner/${cmd}.js`);
+            commandFile = require(`../commandos/owner/${cmd}.js`);
             commandFile.run(auru, message, args);
         } catch (e) {
             console.log(e.message)
